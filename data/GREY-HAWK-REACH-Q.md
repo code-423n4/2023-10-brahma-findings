@@ -19,4 +19,11 @@ File: src/core/AddressProvider.sol
 ```
 https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/AddressProvider.sol#L121-L123
 
+```
+File: src/core/registries/WalletRegistry.sol
+function getSubAccountsForWallet(address _wallet) external view returns (address[] memory) {
+        return walletToSubAccountList[_wallet];
+    }
+```
+https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/registries/WalletRegistry.sol#L63-L65
 
