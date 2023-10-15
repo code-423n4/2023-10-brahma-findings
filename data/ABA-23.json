@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ABA",
+  "risk": "2",
+  "title": "Protocol is not `EIP712` compliant: incorrect typehash for `Validation` and `Transaction` structures",
+  "issueId": 23,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/23"
+}
