@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "constructing the multiSend call data directly from user input without validation is dangerous. ",
+  "issueId": 61,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/61"
+}
