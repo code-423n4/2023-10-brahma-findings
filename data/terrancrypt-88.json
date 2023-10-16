@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "terrancrypt",
+  "risk": "3",
+  "title": "Delegatecall Risk In `ConsoleFallbackHandler.sol` Contract",
+  "issueId": 88,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/88"
+}
