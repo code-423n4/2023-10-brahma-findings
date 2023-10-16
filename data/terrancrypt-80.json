@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "terrancrypt",
+  "risk": "3",
+  "title": "Console Overriding Risk In `TransactionValidator.sol`",
+  "issueId": 80,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/80"
+}
