@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The nonce bumping logic is vulnerable to making the transaction run out of gas",
+  "issueId": 69,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/69"
+}
