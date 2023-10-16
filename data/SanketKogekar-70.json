@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "SanketKogekar",
+  "risk": "3",
+  "title": "Signers can add new modules to a safe by abusing reentrancy (No Reentrancy checks in the system)",
+  "issueId": 70,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/70"
+}
