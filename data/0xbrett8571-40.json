@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xbrett8571",
+  "risk": "3",
+  "title": "Lack of `PolicyValidator` validation allows for malicious compliance bypass.",
+  "issueId": 40,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/40"
+}
