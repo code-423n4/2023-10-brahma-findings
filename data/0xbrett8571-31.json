@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Lack of `_signature` length validation could permit short, invalid signatures.",
+  "issueId": 31,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/31"
+}
