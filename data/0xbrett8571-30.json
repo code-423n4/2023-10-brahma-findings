@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "`getMessageHash` lacks input validation, complex hashing, weak `signedMessages` check.",
+  "issueId": 30,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/30"
+}
