@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "matrix_0wl",
+  "risk": "2",
+  "title": "Vulnerability in Code Size Check in AddressProvider Contract",
+  "issueId": 89,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/89"
+}
