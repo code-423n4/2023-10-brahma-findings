@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "SanketKogekar",
+  "risk": "3",
+  "title": "A SubAccount can be registered for any address even if the same address is never registered as a wallet.",
+  "issueId": 74,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/74"
+}
