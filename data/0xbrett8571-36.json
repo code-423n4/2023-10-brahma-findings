@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xbrett8571",
+  "risk": "3",
+  "title": "Malicious contracts can bypass SafeEnabler restrictions, endangering Safe security.",
+  "issueId": 36,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/36"
+}
