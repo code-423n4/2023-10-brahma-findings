@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Missing validation allows crafted signatures to be exploited.",
+  "issueId": 28,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/28"
+}
