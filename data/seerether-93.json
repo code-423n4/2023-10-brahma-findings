@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The _isConsoleBeingOverriden function does not verify that the call is using the CALL opcode, which would prevent additional side effects.",
+  "issueId": 93,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/93"
+}
