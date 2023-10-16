@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "SanketKogekar",
+  "risk": "2",
+  "title": "The `_getGuard` and `_getFallbackHandler` does not validated the params and could be leveraged by hackers",
+  "issueId": 75,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/75"
+}
