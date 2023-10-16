@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "SanketKogekar",
+  "risk": "3",
+  "title": "The `checkAfterExecution()` has no checks to ensure that the safe's threshold isn't changed by a transaction executed by signers.",
+  "issueId": 71,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/71"
+}
