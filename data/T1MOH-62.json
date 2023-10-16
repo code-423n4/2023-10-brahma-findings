@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "T1MOH",
+  "risk": "2",
+  "title": "All SubAccount's transactions will fail after Main Console manually changes FallbackHandler in Subaccount",
+  "issueId": 62,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/62"
+}
