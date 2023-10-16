@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "foxb868",
+  "risk": "2",
+  "title": "`Op` parameter lacks validation, permitting unintended operation types in Safe.",
+  "issueId": 54,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/54"
+}
