@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Critical modules (Main Console, SafeModerator) need extra protection against unauthorized changes.",
+  "issueId": 34,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/34"
+}
