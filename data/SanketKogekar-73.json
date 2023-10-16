@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "SanketKogekar",
+  "risk": "2",
+  "title": "Attacker can perform malicious transactions in the safe because reentrancy is not implemented correctly in the `checkTransaction()` and `checkAfterExecution()`",
+  "issueId": 73,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/73"
+}
