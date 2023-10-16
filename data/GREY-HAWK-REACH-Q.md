@@ -1,7 +1,7 @@
 # [N-01] Redundant getters for public mappings 
 Additional getters of public mappings are implemented. Either directly call the public mapping to retrieve the desired values, or make the mappings internal or private.
 
-There are № instances of this issue:
+There are 3 instances of this issue:
 
 ```
 File: src/core/AddressProvider.sol
