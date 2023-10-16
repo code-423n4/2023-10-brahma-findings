@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The policyHashValid boolean controls whether the guard is enabled on the safe. But this could be manipulated by the caller to avoid enabling the guard. The guard enable logic should be unconditional.",
+  "issueId": 44,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/44"
+}
