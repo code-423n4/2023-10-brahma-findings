@@ -27,3 +27,9 @@ function getSubAccountsForWallet(address _wallet) external view returns (address
 ```
 https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/registries/WalletRegistry.sol#L63-L65
 
+# [N-02] Typo in the function name
+[TransactionValidator.sol#L149](https://github.com/code-423n4/2023-10-brahma/blob/a6424230052fc47c4215200c19a8eef9b07dfccc/contracts/src/core/TransactionValidator.sol#L149)
+```diff
+-   function _isConsoleBeingOverriden(
++   function _isConsoleBeingOverridden(
+```
