@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "foxb868",
+  "risk": "3",
+  "title": "Lack of target address validation allows unauthorized contract execution.",
+  "issueId": 53,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/53"
+}
