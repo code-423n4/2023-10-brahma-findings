@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "matrix_0wl",
+  "risk": "2",
+  "title": "Improper Use of Strict Equality in Transaction Validation Logic",
+  "issueId": 92,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/92"
+}
