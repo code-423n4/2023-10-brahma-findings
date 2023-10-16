@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "seerether",
+  "risk": "3",
+  "title": " checking executor.code.length == 0 is not a safe way to determine if the executor is an EOA (Externally Owned Account). An attacker could deploy a contract with empty code to spoof this check.",
+  "issueId": 99,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/99"
+}
