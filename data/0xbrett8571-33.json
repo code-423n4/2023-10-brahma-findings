@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Lack of authentication lets anyone bypass `SafeModerator` security checks using `TransactionValidator`.",
+  "issueId": 33,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/33"
+}
