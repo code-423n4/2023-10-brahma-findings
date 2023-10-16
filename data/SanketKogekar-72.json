@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "SanketKogekar",
+  "risk": "2",
+  "title": "Signers can backdoor the safe to execute any transaction in the future without consensus",
+  "issueId": 72,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/72"
+}
