@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The ownerSafeCount mapping is vulnerable to an attacker deploying multiple safes with the same ownersHash and artificially incrementing the nonce themselves",
+  "issueId": 78,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/78"
+}
