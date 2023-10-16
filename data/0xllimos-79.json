@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xllimos",
+  "risk": "3",
+  "title": "EIP1271 is not implement correctly can lead to loss of funds",
+  "issueId": 79,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/79"
+}
