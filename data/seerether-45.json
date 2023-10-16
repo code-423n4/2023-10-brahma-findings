@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The console account address is passed in as a parameter. This could be manipulated to enable a malicious account as a module. The console account address should be derived from msg.sender.",
+  "issueId": 45,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/45"
+}
