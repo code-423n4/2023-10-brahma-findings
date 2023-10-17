@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xbrett8571",
+  "risk": "3",
+  "title": "Assuming fixed signature format makes `PolicyValidator` susceptible to manipulation attacks.",
+  "issueId": 131,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/131"
+}
