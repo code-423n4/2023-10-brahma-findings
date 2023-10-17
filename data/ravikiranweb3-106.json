@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ravikiranweb3",
+  "risk": "3",
+  "title": "Any one except the contract itself can override guard address in the storage",
+  "issueId": 106,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/106"
+}
