@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Myd",
+  "risk": "3",
+  "title": "Insufficient state validation in `_checkSubAccountSecurityConfig` could lead to security issues.",
+  "issueId": 170,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/170"
+}
