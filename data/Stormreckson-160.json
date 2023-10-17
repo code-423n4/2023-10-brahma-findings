@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Stormreckson",
+  "risk": "2",
+  "title": "Wallet from Console v1 policy commits aren't change when migrating to v2 might lead to DOS for v1 migrants",
+  "issueId": 160,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/160"
+}
