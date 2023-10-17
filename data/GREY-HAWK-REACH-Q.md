@@ -38,7 +38,7 @@ https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/regist
 
 EOAs can registerWallet() themselves and deploySubAccount's. Consider adding extra checks so only SafeWallets are able to do that.
 
-# [N-04] SafeHelper#executeOnSafe - redundant code
+# [N-04] SafeHelper#_executeOnSafe - redundant code
 [SafeHelper.sol#L50-L78](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/libraries/SafeHelper.sol#L50-L78)
 
 Safe's code has the following [line](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/lib/safe-contracts/contracts/GnosisSafe.sol#L180):
