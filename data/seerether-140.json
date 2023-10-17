@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The TransactionValidator's check would still pass even if the actual set guard on the Safe has been changed, meaning TransactionValidator's security checks can be bypassed",
+  "issueId": 140,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/140"
+}
