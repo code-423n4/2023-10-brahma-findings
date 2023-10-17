@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "GREY-HAWK-REACH",
+  "risk": "2",
+  "title": "Frontrunning protection in SafeDeployer is insufficient",
+  "issueId": 152,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/152"
+}
