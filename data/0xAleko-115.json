@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xAleko",
+  "risk": "2",
+  "title": "EOA checking can be passed. malicious SC can be registered as EOA in AddressProvider.sol: setAuthorizedAddress()",
+  "issueId": 115,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/115"
+}
