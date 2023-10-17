@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ChainSentry",
+  "risk": "3",
+  "title": "Unbounded Loop in `_createSafe`",
+  "issueId": 134,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/134"
+}
