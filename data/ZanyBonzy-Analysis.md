@@ -50,7 +50,7 @@ It consists of four major account types:
    - After the check, the desired calldata is executed. 
    - After the calldata is successfully executed, `execTransaction` function calls the `checkAfterExecution` function in [SafeModeratorOverridable.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeModeratorOverridable.sol) contract. This calls the `validatePostTransactionOverridable` in the [TransactionValidator.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/TransactionValidator.sol) contract.
 
-    ###### **Transaction functions flow**
+    ###### **Transaction function flow**
     execTransaction &#8594; checkTransaction &#8594; validatePreTransactionOverridable ==> _isConsoleBeingOverriden (No) ==> _validatePolicySignature &#8594; isPolicySignatureValid &#8594; execTransaction (desired calldatas are executed) &#8594; checkAfterExecution &#8594; validatePostTransactionOverridable
     ###### **Transaction contract flow**
     GnosisSafe &#8594; SafeModeratorOverridable &#8594; TransactionValidator <==> TransactionValidator <==> TransactionValidator &#8594; PolicyValidator &#8594; GnosisSafe &#8594; SafeModeratorOverridable &#8594; TransactionValidator
@@ -58,9 +58,9 @@ It consists of four major account types:
 3. `execTransaction` is called by a console account with policies and safeguard, while also disabling the safeguard - This occurs almost as above with the added caveat that the safeguard is overriden. The action of overriding the safeguard skips the policy validation, and disables the guard by setting guard address to 0. However unlike stated in the readme, after guard is disabled. It doesn't seem to perform the checkAfterExecution. This is because before performing checkAfterExecution, there's a [check](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/lib/safe-contracts/contracts/GnosisSafe.sol#L190) to see if guard address isn't 0. If 0, the checkAfterExecution is skipped.     
 
 
-      ###### **Transaction functions flow**
+      ###### ***Transaction function flow***
       execTransaction &#8594; checkTransaction &#8594; validatePreTransactionOverridable ==> _isConsoleBeingOverriden (Yes) ~~== _validatePolicySignature =&#8594; isPolicySignatureValid~~ &#8594; execTransaction (desired calldatas are executed, setGuard(address(0)))
-      ###### **Transaction contract flow**
+      ###### ***Transaction contract flow***
       GnosisSafe &#8594; SafeModeratorOverridable &#8594; TransactionValidator <==> TransactionValidator ~~&#8594; TransactionValidator =&#8594; PolicyValidator~~ &#8594; GnosisSafe
 
 5.  `execTransactionFromModuleReturnData` is called by the console account via the sub accouunt using the [ModuleManager.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/lib/safe-contracts/contracts/base/ModuleManager.sol). The function executes the desired calldata and returns returnData to ConsoleAccount.
@@ -71,9 +71,9 @@ It consists of four major account types:
    - The [TransactionValidator.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/TransactionValidator.sol) contract validates the policy signature through the `_validatePolicySignature`. which calls the `isPolicySignatureValid` in the [PolicyValidator.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/PolicyValidator.sol) contract. This validates the policyHash and the Trusted Validator Signature.
    - After the check, the desired calldata is executed. 
    - After the calldata is successfully executed, `execTransaction` function calls the `checkAfterExecution` function in[SafeModerator.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeModerator.sol) contract. This calls the `validatePostTransaction` in the [TransactionValidator.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/TransactionValidator.sol) contract. This checks the security config by calling the `_checkSubAccountSecurityConfig` function. It makes sure guard, fallbackhandlers and the console has not be disabled as module.    
-    ###### **Transaction functions flow**
+    ###### ***Transaction function flow***
     execTransaction &#8594; checkTransaction &#8594; validatePreTransaction ==> _validatePolicySignature &#8594; isPolicySignatureValid &#8594; execTransaction (desired calldatas are executed) &#8594; checkAfterExecution &#8594; validatePostTransaction ==> _checkSubAccountSecurityConfig
-    ###### **Transaction contract flow**
+    ###### ***Transaction contract flow***
     GnosisSafe &#8594; SafeModerator &#8594; TransactionValidator <==> TransactionValidator &#8594; PolicyValidator &#8594; GnosisSafe &#8594; SafeModerator &#8594; TransactionValidator <==> TransactionValidator
 
 7. `executeTransaction` is called the executor on the [ExecutorPlugin.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/ExecutorPlugin.sol) enabled as module on the sub-account.
@@ -82,9 +82,9 @@ It consists of four major account types:
    - After a successful check, the [ExecutorPlugin.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/ExecutorPlugin.sol) executes transaction on the sub-account by calling `_executeTxnAsModule` function.
    - After execution, the ExecutorPlugin calls `validatePostExecutorTransaction` function on TransactionValidator. to check that SafeModerator hasn't been removed as guard on SubAccount and ConsoleAccount hasn't been removed as module on SubAccount.
 
-    ###### **Transaction functions flow**
+    ###### ***Transaction function flow***
     executeTransaction &#8594; _validateExecutionRequest &#8594; validatePreExecutorTransaction ==> _validatePolicySignature &#8594; isPolicySignatureValid &#8594; executeTransaction (desired calldatas are executed)(_executeTxnAsModule) &#8594; validatePostExecutorTransaction &#8594; _checkSubAccountSecurityConfig
-    ###### **Transaction contract flow**
+    ###### ***Transaction contract flow***
     ExecutorPlugin <==> ExecutorPlugin (checks with ExecutorRegistry) &#8594; TransactionValidator <==> TransactionValidator &#8594; PolicyValidator &#8594; ExecutorPlugin &#8594; TransactionValidator <==> TransactionValidator
 
 ## **Codebase quality analysis**
@@ -101,6 +101,8 @@ One thing to also note is that although wallets and sub accounts can be added, t
 
 ## **Conclusion**
 We started the audit process by thoroughly reviewing provided documentations, tests noting various important parts and asked the sponsors questions. We used static analysis tool and linters to audit the codebase, noted the bot reports and went about with the manual code inspection. We carefully inspected each section of the codebase, we tested possible attack vectors, focusing both on the sponsor's interested areas of attack (through imported wallets) and areas we deemed important. We took notes of our findings, tested them out and prepared our analysis. Overall, the console contract looks to be well written and  doesn't have a lot of serious issues. We recommend the team goes through these, make appropriate modifications where needed before deployment.
+
+
 
 
 
