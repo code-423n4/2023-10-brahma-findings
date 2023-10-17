@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Validator checks via subAccount calls can be fooled by compromised Safes.",
+  "issueId": 124,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/124"
+}
