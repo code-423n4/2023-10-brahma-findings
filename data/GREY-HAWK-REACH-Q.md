@@ -49,6 +49,9 @@ Because `safeTxGas` and `gasPrice` are hardcoded as zeroes, it can be deduced to
 
 `success == false` - the execution reverts immediately.
 `success == true` - the execution is successful; `execTransaction` returns `true`.
+
+Thus, it is impossible for execTransaction to return `false` if `safeTxGas == 0` and `gasPrice == 0`.
+
 ## Recommendation
 ```diff
     function _executeOnSafe(address safe, address target, Enum.Operation op, bytes memory data) internal {
