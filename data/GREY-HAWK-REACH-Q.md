@@ -54,6 +54,8 @@ Thus, it is impossible for execTransaction to return `false` if `safeTxGas == 0`
 
 ## Recommendation
 ```diff
+-   error SafeExecTransactionFailed();
+    /* ... */
     function _executeOnSafe(address safe, address target, Enum.Operation op, bytes memory data) internal {
 -       bool success = IGnosisSafe(safe).execTransaction(
 +       IGnosisSafe(safe).execTransaction(
