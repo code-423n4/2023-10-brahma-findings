@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Myd",
+  "risk": "3",
+  "title": "The lack of complete state validation enables attackers to escalate privilege through unvalidated state parameters.",
+  "issueId": 167,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/167"
+}
