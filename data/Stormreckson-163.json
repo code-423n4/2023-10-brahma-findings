@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Stormreckson",
+  "risk": "2",
+  "title": "`ConsoleAccount` can be used as `Executor` of a `subAccount` ",
+  "issueId": 163,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/163"
+}
