@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Myd",
+  "risk": "3",
+  "title": "Wallet owners can update `subAccount` policies, potentially compromising security.",
+  "issueId": 172,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/172"
+}
