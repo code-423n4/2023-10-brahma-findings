@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "klau5",
+  "risk": "3",
+  "title": "isPolicySignatureValid - signature validation always fails and the user's transaction cannot be executed because of wrong nonce",
+  "issueId": 155,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/155"
+}
