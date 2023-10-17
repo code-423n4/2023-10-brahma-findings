@@ -74,3 +74,4 @@ Thus, it is impossible for execTransaction to return `false` if `safeTxGas == 0`
 -       if (!success) revert SafeExecTransactionFailed();
     }
 ```
+# [N-05] Guardian role is not implemented
