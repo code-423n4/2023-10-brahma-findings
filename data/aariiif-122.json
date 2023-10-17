@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "aariiif",
+  "risk": "3",
+  "title": "Governance transfer lacks consent, enabling malicious control takeover.",
+  "issueId": 122,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/122"
+}
