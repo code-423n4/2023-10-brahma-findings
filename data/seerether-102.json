@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The signature validation doesn't verify the chain of trust back to the safe owners. The safe owners signatures are discarded after decompilation. An attacker could generate valid trusted validator signatures without safe owner consent",
+  "issueId": 102,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/102"
+}
