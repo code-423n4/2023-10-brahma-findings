@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "aariiif",
+  "risk": "3",
+  "title": "Inheriting Solidity 0.8.19 risks reentrancy vulnerabilities due to known bugs.",
+  "issueId": 123,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/123"
+}
