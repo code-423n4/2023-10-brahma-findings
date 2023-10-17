@@ -33,3 +33,39 @@ https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/regist
 -   function _isConsoleBeingOverriden(
 +   function _isConsoleBeingOverridden(
 ```
+
+# [N-03] EOAs access controls
+
+EOAs can registerWallet() themselves and deploySubAccount's. Consider adding extra checks so only SafeWallets are able to do that.
+
+# [N-04] SafeHelper#executeOnSafe - redundant code
+[SafeHelper.sol#L50-L78](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/libraries/SafeHelper.sol#L50-L78)
+
+Safe's code has the following [line](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/lib/safe-contracts/contracts/GnosisSafe.sol#L180):
+```
+require(success || safeTxGas != 0 || gasPrice != 0, "GS013");
+```
+Because `safeTxGas` and `gasPrice` are hardcoded as zeroes, it can be deduced to `require(success)`. 
+
+`success == false` - the execution reverts immediately.
+`success == true` - the execution is successful; `execTransaction` returns `true`.
+## Recommendation
+```diff
+    function _executeOnSafe(address safe, address target, Enum.Operation op, bytes memory data) internal {
+-       bool success = IGnosisSafe(safe).execTransaction(
++       IGnosisSafe(safe).execTransaction(
+            address(target), // to
+            0, // value
+            data, // data
+            op, // operation
+            0, // safeTxGas
+            0, // baseGas
+            0, // gasPrice
+            address(0), // gasToken
+            payable(address(0)), // refundReceiver
+            _generateSingleThresholdSignature(address(this)) // signatures
+        );
+
+-       if (!success) revert SafeExecTransactionFailed();
+    }
+```
