@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "klau5",
+  "risk": "2",
+  "title": "With Safe 1.5+, module transactions executed by ExecutorPlugin.executeTransaction will always fail because checkModuleTransaction interface is incorrect",
+  "issueId": 157,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/157"
+}
