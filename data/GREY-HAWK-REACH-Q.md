@@ -96,3 +96,31 @@ function deployConsoleAccount(
 +   }
     /* ... */
 ```
+# [N-07] Use timelock for changing the Governance 
+
+[AddressProvider.sol#L48-L69](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/AddressProvider.sol#L48-L69)
+```
+    /**
+     * @notice Governance setter
+     * @param _newGovernance address of new governance
+     */
+    function setGovernance(address _newGovernance) external {
+        _notNull(_newGovernance);
+        _onlyGov();
+        emit GovernanceTransferRequested(governance, _newGovernance);
+        pendingGovernance = _newGovernance;
+    }
+
+
+    /**
+     * @notice Governance accepter
+     */
+    function acceptGovernance() external {
+        if (msg.sender != pendingGovernance) {
+            revert NotPendingGovernance(msg.sender);
+        }
+        emit GovernanceTransferred(governance, msg.sender);
+        governance = msg.sender;
+        delete pendingGovernance;
+    }
+```
