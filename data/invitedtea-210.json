@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "invitedtea",
+  "risk": "2",
+  "title": "Denial-of-Service Vulnerability in Safe Deployment due to Predictable Nonce Generation",
+  "issueId": 210,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/210"
+}
