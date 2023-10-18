@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Dinesh11G",
+  "risk": "2",
+  "title": "Lack of Code Coverage for `checkTransaction` Function in SafeModeratorOverridable Contract",
+  "issueId": 185,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/185"
+}
