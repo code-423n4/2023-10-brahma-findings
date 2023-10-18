@@ -20,3 +20,17 @@ https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeDe
     string public constant VERSION = "1";
 ```
 
+
+
+# No valid input validation is performed to ensure that a given _wallet address exists in the mapping
+In the `getSubAccountsForWallet` function, valid input validation is not performed to ensure that a given _wallet address exists in the mapping. This can lead to problems when calling functions on addresses that do not exist in the mapping.
+
+https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/registries/WalletRegistry.sol#L63
+## Suggestions and Recommendations:
+It is recommended that logic be added to the function to ensure that a given _wallet address exists in the mapping to prevent operations on non-existent addresses. 
+```solidity
+function getSubAccountsForWallet(address _wallet) external view returns (address[] memory) {
+    require(walletToSubAccountList[_wallet].length > 0, "Wallet address not found in mapping");
+    return walletToSubAccountList[_wallet];
+}
+```
