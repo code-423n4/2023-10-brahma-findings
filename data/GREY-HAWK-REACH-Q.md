@@ -29,9 +29,14 @@ https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/regist
 
 # [N-02] Typo in the function name
 [TransactionValidator.sol#L149](https://github.com/code-423n4/2023-10-brahma/blob/a6424230052fc47c4215200c19a8eef9b07dfccc/contracts/src/core/TransactionValidator.sol#L149)
+[TransactionValidator.sol#L66](https://github.com/code-423n4/2023-10-brahma/blob/a6424230052fc47c4215200c19a8eef9b07dfccc/contracts/src/core/TransactionValidator.sol#L66)
 ```diff
 -   function _isConsoleBeingOverriden(
 +   function _isConsoleBeingOverridden(
+```
+```diff
+-       if (_isConsoleBeingOverriden(txParams.from, txParams.to, txParams.value, txParams.data, txParams.operation)) {
++       if (_isConsoleBeingOverridden(txParams.from, txParams.to, txParams.value, txParams.data, txParams.operation)) {
 ```
 
 # [N-03] EOAs access controls
