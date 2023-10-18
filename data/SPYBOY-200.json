@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "SPYBOY",
+  "risk": "2",
+  "title": "The Gnosis wallet does not check for contract existence and may mislead the user about the transaction's result",
+  "issueId": 200,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/200"
+}
