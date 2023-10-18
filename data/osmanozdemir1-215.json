@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "osmanozdemir1",
+  "risk": "2",
+  "title": "A guard can be set to a console account without a policy registry, which will lead all transactions to revert",
+  "issueId": 215,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/215"
+}
