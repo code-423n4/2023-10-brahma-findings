@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "invitedtea",
+  "risk": "3",
+  "title": "The `updatePolicy` function does not check if the policy is registered in the `PolicyRegistry` before updating it",
+  "issueId": 216,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/216"
+}
