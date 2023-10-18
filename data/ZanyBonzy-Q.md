@@ -1,0 +1,5 @@
+1. Wallets and sub accounts can't be deregistered. It might cause some issues later on.
+2. [`_onlyGov`](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/AddressProviderService.sol#L62) in AddressProviderService.sol is redundant and not used anywhere in the contract. Consider removing;
+3. Two exactly named functions that do the same thing. [_notNull](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/AddressProviderService.sol#L72) and [_notNull](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/AddressProvider.sol#L147) in AddressProviderService.sol and AddressProvider.sol.
+4. [`registerExecutor`](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/registries/ExecutorRegistry.sol#L38) doesn't check for 0x0 address. Consider adding a 0x0 address check.
+
