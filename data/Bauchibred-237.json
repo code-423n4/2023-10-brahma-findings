@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": " ConsoleFallBackHandler is not in compliance with EIP1271 and wouldn't work well while validating signatures",
+  "issueId": 237,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/237"
+}
