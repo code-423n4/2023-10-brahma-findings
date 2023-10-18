@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "invitedtea",
+  "risk": "3",
+  "title": "Users can potentially provide any address as the '_addressProvider' in 'AddressProviderService'",
+  "issueId": 218,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/218"
+}
