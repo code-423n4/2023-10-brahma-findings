@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Alra",
+  "risk": "2",
+  "title": "Multichain deployed addresses can be disrupted to not deploy on the same address, which could lead to DoS",
+  "issueId": 214,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/214"
+}
