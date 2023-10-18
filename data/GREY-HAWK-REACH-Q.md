@@ -75,3 +75,19 @@ Thus, it is impossible for execTransaction to return `false` if `safeTxGas == 0`
     }
 ```
 # [N-05] Guardian role is not implemented
+[RegistriesRoles.md](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/docs/RegistriesRoles.md#:~:text=Guardian,security%20and%20management.)
+# [N-06] Consider enforcing the order of owner addresses in deployConsoleAccount
+[SafeDeployer.sol#L49](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/SafeDeployer.sol#L49)
+```
+function deployConsoleAccount(
+        address[] calldata _owners,
+        uint256 _threshold,
+        bytes32 _policyCommit,
+        bytes32 _salt
+    ) external nonReentrant returns (address _safe) {
+    uint256 ownersLengthMinusOne = _owners.length - 1;
+    for (uint i; i < ownersLengthMinusOne; i++){
+        require(_owners[i] < _owners[i+1], "Wrong order");
+    }
+    /* ... */
+```
