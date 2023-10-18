@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "emerald7017",
+  "risk": "3",
+  "title": "Lack of binding enables reuse of trustedValidator's signature on different transactions.",
+  "issueId": 222,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/222"
+}
