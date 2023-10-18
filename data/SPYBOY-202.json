@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "SPYBOY",
+  "risk": "2",
+  "title": "Signer can backdoor the safe to execute any transaction in the future without ConsoleAccount",
+  "issueId": 202,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/202"
+}
