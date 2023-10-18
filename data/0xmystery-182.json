@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xmystery",
+  "risk": "2",
+  "title": "Inconsistent Data Typing Leads to Potential EIP-712 Non-Compliance",
+  "issueId": 182,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/182"
+}
