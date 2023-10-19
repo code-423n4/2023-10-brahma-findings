@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xWagmi",
+  "risk": "2",
+  "title": "Policy signatures could be replayed in different chains ",
+  "issueId": 255,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/255"
+}
