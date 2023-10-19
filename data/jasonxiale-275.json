@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "jasonxiale",
+  "risk": "2",
+  "title": "`WalletRegistry.registerWallet` lacks of access control",
+  "issueId": 275,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/275"
+}
