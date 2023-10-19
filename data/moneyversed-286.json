@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "moneyversed",
+  "risk": "3",
+  "title": "Unchecked signature length in PolicyValidator can lead to buffer overflows or underflows due to absence of proper signature length validation",
+  "issueId": 286,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/286"
+}
