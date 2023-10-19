@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "xAlismx",
+  "risk": "3",
+  "title": "In registerSubAccount function, doesn't check that sub account is not a wallet.",
+  "issueId": 290,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/290"
+}
