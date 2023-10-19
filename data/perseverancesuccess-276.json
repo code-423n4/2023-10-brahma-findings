@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "perseverancesuccess",
+  "risk": "3",
+  "title": "Executor can backdoor the SubAccount safe by registering a new module to execute any transactions and break the invariants of the system",
+  "issueId": 276,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/276"
+}
