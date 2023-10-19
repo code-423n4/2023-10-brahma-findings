@@ -55,7 +55,7 @@ Because `safeTxGas` and `gasPrice` are hardcoded as zeroes, it can be deduced to
 `success == false` - the execution reverts immediately.
 `success == true` - the execution is successful; `execTransaction` returns `true`.
 
-Thus, it is impossible for execTransaction to return `false` if `safeTxGas == 0` and `gasPrice == 0`.
+Thus, it is impossible for execTransaction with `safeTxGas == 0` and `gasPrice == 0` to return `false`.
 
 ## Recommendation
 ```diff
