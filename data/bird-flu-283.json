@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "bird-flu",
+  "risk": "2",
+  "title": "Account Creation can be DOS'd by A Malicious Frontrunner Using Create2",
+  "issueId": 283,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/283"
+}
