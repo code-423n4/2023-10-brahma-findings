@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "invitedtea",
+  "risk": "2",
+  "title": "When the `SafeHelper` library's `_executeOnSafe` function is used by another contract without proper controls",
+  "issueId": 252,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/252"
+}
