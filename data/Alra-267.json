@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Alra",
+  "risk": "2",
+  "title": "Protocol does not comply with EIP-4377 and restricts 'STATICCALL'  opcode",
+  "issueId": 267,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/267"
+}
