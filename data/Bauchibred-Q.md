@@ -4,11 +4,11 @@
 
 |              | Issue                                                                                          |
 | ------------ | :--------------------------------------------------------------------------------------------- |
-| QA&#x2011;01 | Implementation to guarantee on-chain security for future use is flawed and requires correction |
+| QA&#x2011;01 | Struct Definitions Should Adhere to Established Standards in `TypeHashHelper.sol`              |
 | QA&#x2011;02 | Address Typographical Errors                                                                   |
 | QA&#x2011;03 | Exclude Testing Variables Prior to Production Release                                          |
 | QA&#x2011;04 | `registerSubAccount()` shouldn't accept an already active wallet                               |
-| QA&#x2011;05 | Struct Definitions Should Adhere to Established Standards in `TypeHashHelper.sol`              |
+| QA&#x2011;05 | Implementation to guarantee on-chain security for future use is flawed and requires correction |
 | QA&#x2011;06 | `_executeOnSafe()`'s Execution is Flawed Due to Missing Value in Payable Call                  |
 | QA&#x2011;07 | Potential Signature Bypass with Empty Signatures                                               |
 | QA&#x2011;08 | Add a function to remove a wallet/subAccount                                                   |
@@ -16,33 +16,50 @@
 | QA&#x2011;10 | Unsafe Downcasting without Proper Checks                                                       |
 | QA&#x2011;11 | Add `STATICCALL` Support in `_parseOperationEnum()`                                            |
 
-## QA-01 Implementation to guarantee on-chain security for future use is flawed and requires correction
+## QA-01 Struct Definitions Should Adhere to Established Standards in `TypeHashHelper.sol`
 
 ### Impact
 
-**Medium to Low** Due to this oversight, achieving critical functionality for guaranteeing on-chain security might not be feasible.
+Misalignment of structs may lead to transaction and validation inconsistencies compared to EIP specified structs.
 
 ### Proof of Concept
 
-Refer to the `validatePostTransactionOverridable()` function:
+Review `_buildTransactionStructHash()`:
 
 ```solidity
-    /* solhint-disable no-empty-blocks */
-    /**
-     * @notice Provides on-chain guarantees on security critical expected states of a Brahma console account
-     * @dev Empty hook available for future use
-     */
-    function validatePostTransactionOverridable(bytes32, /*txHash */ bool, /*success */ address /*console */ )
-        external
-        view
-    {}
+    function _buildTransactionStructHash(Transaction memory txn) internal pure returns (bytes32) {
+        return keccak256(
+            abi.encode(
+                TRANSACTION_PARAMS_TYPEHASH,
+                txn.to,
+                txn.value,
+                keccak256(txn.data),
+                txn.operation,
+                txn.account,
+                txn.executor,
+                txn.nonce
+            )
+        );
+    }
 ```
 
-This function is intended to be overridable to accommodate future implementations. However, it lacks the `virtual` keyword, meaning it cannot be overridden as anticipated.
+However, the proposed structure is as follows:
+
+```solidity
+    struct Transaction {
+        uint8 operation;
+        address to;
+        address account;
+        address executor;
+        uint256 value;
+        uint256 nonce;
+        bytes data;
+    }
+```
 
 ### Recommended Mitigation Steps
 
-Incorporate the `virtual` keyword to the function.
+Maintain a consistent struct pattern, preferably aligning with the EIP712 standard.
 
 ---
 
@@ -141,52 +158,33 @@ Yet, in the registration of the sub-account (as shown above), the only check app
 
 Ensure that an active wallet cannot be registered as a subaccount to another.
 
-## QA-05 Struct Definitions Should Adhere to Established Standards in `TypeHashHelper.sol`
+## QA-05 Implementation to guarantee on-chain security for future use is flawed and requires correction
 
 ### Impact
 
-Misalignment of structs may lead to transaction and validation inconsistencies compared to EIP specified structs.
+**Medium to Low** Due to this oversight, achieving critical functionality for guaranteeing on-chain security might not be feasible.
 
 ### Proof of Concept
 
-Review `_buildTransactionStructHash()`:
+Refer to the `validatePostTransactionOverridable()` function:
 
 ```solidity
-    function _buildTransactionStructHash(Transaction memory txn) internal pure returns (bytes32) {
-        return keccak256(
-            abi.encode(
-                TRANSACTION_PARAMS_TYPEHASH,
-                txn.to,
-                txn.value,
-                keccak256(txn.data),
-                txn.operation,
-                txn.account,
-                txn.executor,
-                txn.nonce
-            )
-        );
-    }
+    /* solhint-disable no-empty-blocks */
+    /**
+     * @notice Provides on-chain guarantees on security critical expected states of a Brahma console account
+     * @dev Empty hook available for future use
+     */
+    function validatePostTransactionOverridable(bytes32, /*txHash */ bool, /*success */ address /*console */ )
+        external
+        view
+    {}
 ```
 
-However, the proposed structure is as follows:
-
-```solidity
-    struct Transaction {
-        uint8 operation;
-        address to;
-        address account;
-        address executor;
-        uint256 value;
-        uint256 nonce;
-        bytes data;
-    }
-```
+This function is intended to be overridable to accommodate future implementations. However, it lacks the `virtual` keyword, meaning it cannot be overridden as anticipated.
 
 ### Recommended Mitigation Steps
 
-Maintain a consistent struct pattern, preferably aligning with the EIP712 standard.
-
----
+## Incorporate the `virtual` keyword to the function.
 
 ## QA-06 `_executeOnSafe()`'s Execution is Flawed Due to Missing Value in Payable Call
 
@@ -309,7 +307,7 @@ Here, `block.timestamp` is explicitly cast to `uint32`. If the `block.timestamp`
 
 Implement a safe casting mechanism to ensure that the `block.timestamp` is within the valid range of `uint32` before attempting the cast. Also, consider if the chosen datatype `uint32` for `expiryEpoch` is appropriate, given the potential lifespan and requirements of the contract.
 
-## Add `STATICCALL` Support in `_parseOperationEnum()`
+## QA-11 Add `STATICCALL` Support in `_parseOperationEnum()`
 
 ### Impact
 
