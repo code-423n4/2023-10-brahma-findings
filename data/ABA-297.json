@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ABA",
+  "risk": "3",
+  "title": "Policy check is bypassed if the policy was added to a console account that was initially created without one because the fallback is not changed from the standard gnosis one to `ConsoleFallbackHandler`",
+  "issueId": 297,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/297"
+}
