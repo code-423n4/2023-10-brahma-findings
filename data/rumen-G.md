@@ -14,8 +14,8 @@
 | [GAS-6](#GAS-6) | Functions guaranteed to revert when called by normal users can be marked `payable` | 3 |
 | [GAS-7](#GAS-7) | `++i` costs less gas than `i++`, especially when it's used in `for`-loops (`--i`/`i--` too) | 2 |
 | [GAS-8](#GAS-8) | Using `private` rather than `public` for constants, saves gas | 4 |
-| [GAS-9](#GAS-9) | Splitting require() statements that use && saves gas | 1 |
-| [GAS-10](#GAS-10) | `internal` functions not called by the contract should be removed | 10 |
+| [GAS-9](#GAS-9) | `internal` functions not called by the contract should be removed | 10 |
+
 ### [GAS-1] Use assembly to check for `address(0)`
 *Saves 6 gas per instance*
 
@@ -261,17 +261,7 @@ File: libraries/TypeHashHelper.sol
 
 ```
 
-### [GAS-9] Splitting require() statements that use && saves gas
-
-*Instances (1)*:
-```solidity
-File: core/SafeEnabler.sol
-
-48:         require(module != address(0) && module != _SENTINEL_MODULES, "GS101");
-
-```
-
-### [GAS-10] `internal` functions not called by the contract should be removed
+### [GAS-9] `internal` functions not called by the contract should be removed
 If the functions are required by an interface, the contract should inherit from that interface and use the `override` keyword
 
 *Instances (10)*:
