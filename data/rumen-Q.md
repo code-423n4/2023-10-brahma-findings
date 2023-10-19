@@ -4,7 +4,7 @@
 | |Issue|Instances|
 |-|:-|:-:|
 | [NC-1](#NC-1) | Missing checks for `address(0)` when assigning values to address state variables | 2 |
-| [NC-2](#NC-2) | Event is missing `indexed` fields | 4 |
+| [NC-2](#NC-2) | Event is missing `indexed` fields | 2 |
 | [NC-3](#NC-3) | Functions not used internally could be marked external | 4 |
 ### [NC-1] Missing checks for `address(0)` when assigning values to address state variables
 
@@ -18,23 +18,14 @@ File: core/AddressProvider.sol
 
 ```
 
-### [NC-2] Event is missing `indexed` fields
+### [NC-2] Event is missing `indexed` fields (additional instances to automated findings)
 Index event fields make the field more quickly accessible to off-chain tools that parse events. However, note that each index field costs extra gas during emission, so it's not necessarily best to index the maximum allowed per event (three fields). Each event should use three indexed fields if there are three or more fields, and gas usage is not particularly of concern for the events in question. If there are fewer than three fields, all of the fields should be indexed.
 
-*Instances (4)*:
+*Instances (2)*:
 ```solidity
 File: core/SafeDeployer.sol
 
 32:     event SafeProxyCreationFailure(address indexed singleton, uint256 indexed nonce, bytes initializer);
-
-```
-
-```solidity
-File: core/SafeEnabler.sol
-
-19:     event EnabledModule(address module);
-
-20:     event ChangedGuard(address guard);
 
 ```
 
