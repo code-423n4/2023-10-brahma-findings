@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "moneyversed",
+  "risk": "3",
+  "title": "Unintended bypass of policy signature validation in `TransactionValidator` due to specific conditions in the `_isConsoleBeingOverriden` mechanism",
+  "issueId": 285,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/285"
+}
