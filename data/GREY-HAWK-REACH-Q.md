@@ -79,7 +79,7 @@ Thus, it is impossible for execTransaction with `safeTxGas == 0` and `gasPrice =
 -       if (!success) revert SafeExecTransactionFailed();
     }
 ```
-# [N-05] Guardian role is not implemented
+# [N-05] Guardian role is not tested/implemented
 [RegistriesRoles.md](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/docs/RegistriesRoles.md#:~:text=Guardian,security%20and%20management.)
 # [N-06] Consider enforcing the order of owner addresses in deployConsoleAccount
 [SafeDeployer.sol#L49](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/SafeDeployer.sol#L49)
