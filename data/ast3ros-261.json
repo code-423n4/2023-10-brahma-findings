@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ast3ros",
+  "risk": "2",
+  "title": "Incorrect Magic Value Return in Signature Verification",
+  "issueId": 261,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/261"
+}
