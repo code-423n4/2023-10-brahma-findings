@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Matin",
+  "risk": "2",
+  "title": "SafeEnabler's `setGuard()` function can be called by anyone and anytime",
+  "issueId": 265,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/265"
+}
