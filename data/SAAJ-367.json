@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "SAAJ",
+  "risk": "2",
+  "title": "calling EnumerableSet Function can lead to Out-of-Gas error ",
+  "issueId": 367,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/367"
+}
