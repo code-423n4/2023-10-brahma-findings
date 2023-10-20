@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xfuje",
+  "risk": "3",
+  "title": "Backdoored module can execute any transactions without consensus and take over `Console` or `SubAccount`",
+  "issueId": 338,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/338"
+}
