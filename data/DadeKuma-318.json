@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "DadeKuma",
+  "risk": "2",
+  "title": "A zero policy console account can't be reset to the initial state once a policy is set",
+  "issueId": 318,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/318"
+}
