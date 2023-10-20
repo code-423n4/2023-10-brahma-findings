@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xffchain",
+  "risk": "2",
+  "title": "Account should be able to add max time it would want its transaction to be executed. ",
+  "issueId": 431,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/431"
+}
