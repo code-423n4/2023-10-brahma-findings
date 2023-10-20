@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "DadeKuma",
+  "risk": "2",
+  "title": "A module can bypass the policy check in a console account even if the guard is set",
+  "issueId": 323,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/323"
+}
