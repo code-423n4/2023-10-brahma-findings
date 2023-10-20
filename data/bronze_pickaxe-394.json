@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "bronze_pickaxe",
+  "risk": "2",
+  "title": "Design Flaw, registry addresses can not be changed",
+  "issueId": 394,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/394"
+}
