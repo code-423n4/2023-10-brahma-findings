@@ -26,10 +26,11 @@
 | [L-01](#L-01)   | Bypassing of check in `_ensureAddressProvider()` function                                          | -         | _Low_          |
 | [L-02](#L-02)   | Console Account Creation Without Policies Leads to Enforcement Challenges                          | -         | _Low_          |
 | [NC-01](#NC-01) | Add `isWallet` check for provided wallet address in `WalletRegistry#registerSubAccount()` function | -         | _Non Critical_ |
-| [NC-02](#NC-02) | Old Documentation                                                                                  | -         | _Non Critical_ |
+| [NC-02](#NC-02) | Outdated Documentation                                                                             | -         | _Non Critical_ |
 | [NC-03](#NC-03) | Consider to Implement Maximum `SubAccount` Limit                                                   | -         | _Non Critical_ |
 | [NC-04](#NC-04) | Inconsistency in using `Enumerable.AddressSet` and `address[]`                                     | -         | _Non Critical_ |
 | [NC-05](#NC-05) | Inconsistency in Checking Ownership in `ExecutorRegistry.sol`                                      | -         | _Non Critical_ |
+| [NC-06](#NC-06) | Immutability of Registry Addresses in AddressProvider                                              | -         | _Non Critical_ |
 
 ---
 
@@ -115,7 +116,7 @@ Implement Additional Checks: Consider implementing additional checks or validati
 
 ---
 
-# <a name="L-02">Console Account Creation Without Policies Leads to Enforcement Challenges</a>[L-01]
+# <a name="L-02">Console Account Creation Without Policies Leads to Enforcement Challenges</a>[L-02]
 
 ## Summary:
 
@@ -219,7 +220,7 @@ https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeDe
 
 ---
 
-# <a name="NC-02">Old Documentation[NC-02]</a>
+# <a name="NC-02">Outdated Documentation[NC-02]</a>
 
 Update the documentation for the 'Console Guard Removal Transaction' section, which can be found at [link](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/docs/Architecture.md#console-guard-removal-transaction), to align with the latest code implementation of the Brahma Protocol.
 
@@ -380,3 +381,21 @@ This inconsistency in checking ownership can lead to confusion and potential iss
 To maintain consistency and clarity in ownership checks, it is advisable to use a standardized method to verify ownership throughout the contract. You can choose one of the existing methods, such as `isOwner(msg.sender, _subAccount)`, and use it consistently in both the `registerExecutor()` and `deRegisterExecutor()` functions.
 
 Updating the code to use a single ownership verification method will help prevent potential misunderstandings and make the contract more user-friendly. Additionally, ensure that this change is well-documented in the contract's comments or documentation to provide clear guidance to users.
+
+---
+
+# <a name="NC-06">Immutability of Registry Addresses in AddressProvider</a>[NC-06]
+
+## Description
+
+The AddressProvider contract enforces the immutability of registry addresses, meaning that once set, these addresses cannot be altered. This design choice has both positive and negative implications.
+
+On the positive side, it enhances the trust model of the system as these addresses remain immutable, reducing the risk of malicious changes. However, in the unfortunate event of a disaster, this immutability becomes a limitation as it hinders potential recovery efforts for the protocol.
+
+## Recommendation
+
+Users should be made aware of the consequences of this design choice, particularly its impact on the trust model. It is essential to provide clear information about the trade-offs between immutability and disaster recovery to ensure informed decision-making.
+
+#### Link:
+
+- AddressProvider: https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/AddressProvider.sol#L1-L150
