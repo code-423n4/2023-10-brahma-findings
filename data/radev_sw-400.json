@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "radev_sw",
+  "risk": "2",
+  "title": "Cross-Chain Signature Replay Attack",
+  "issueId": 400,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/400"
+}
