@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "bitsurfer",
+  "risk": "2",
+  "title": "an EOA can create subAccount while it should be a console account or Safe Wallet",
+  "issueId": 302,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/302"
+}
