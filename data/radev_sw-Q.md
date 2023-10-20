@@ -31,6 +31,7 @@
 | [NC-04](#NC-04) | Inconsistency in using `Enumerable.AddressSet` and `address[]`                                     | -         | _Non Critical_ |
 | [NC-05](#NC-05) | Inconsistency in Checking Ownership in `ExecutorRegistry.sol`                                      | -         | _Non Critical_ |
 | [NC-06](#NC-06) | Immutability of Registry Addresses in AddressProvider                                              | -         | _Non Critical_ |
+| [NC-07](#NC-07) | Inability for Console Account to Remove `policyCommit` for his `SubAccounts`                       | -         | _Non Critical_ |
 
 ---
 
@@ -399,3 +400,46 @@ Users should be made aware of the consequences of this design choice, particular
 #### Link:
 
 - AddressProvider: https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/AddressProvider.sol#L1-L150
+
+---
+
+# <a name="NC-07">Inability for Console Account to Remove `policyCommit` for his `SubAccounts`</a>[NC-07]
+
+## Description
+
+The `PolicyRegistry` manages policy commits per account. The policy can be updated
+
+- if the commit is zero and the msg.sender is `SafeDeployer`
+- if the `msg.sender` is the owner of the account that is going to have an updated policy
+- if the `msg.sender` is a wallet and is updating the policy for itself.
+
+In the `PolicyRegistry` contract of the Brahma Protocol, there exists a limitation where the **`commitments` for SubAccounts cannot be set to zero (removed) if the `msg.sender is ConsoleAccount/Wallet` that is actually the owner of the SubAccount**. This behavior is due to a check in the `updatePolicy()` function that reverts if `policyCommit` is set to `bytes32(0)`. As a result, **Console Accounts cannot remove (set to zero) the `commitments` data for their SubAccounts**, which may not be the expected behavior.
+
+## Contract Code
+
+```solidity
+function updatePolicy(address account, bytes32 policyCommit) external {
+    if (policyCommit == bytes32(0)) {
+        revert PolicyCommitInvalid();
+    }
+
+    // ... (other logic)
+
+        } else if (walletRegistry.isOwner(msg.sender, account)) {
+            //In case invoker is updating on behalf of sub account
+        }
+
+    // ... (other logic)
+
+
+    _updatePolicy(account, policyCommit);
+}
+```
+
+## Impact
+
+The impact of this issue is that `commitments` data of SubAccounts cannot be removed or set to zero bytes data by the ConsoleAccount/Wallet. This means that once a `policyCommit` is set for a SubAccount, it cannot be effectively revoked or cleared. While this might be the intended behavior for some use cases, it limits the flexibility of Console Accounts to manage the policies of their SubAccounts.
+
+## Recommendation
+
+Consider to allow `bytes(0) for commitments[account]` to be set only if the `msg.sender` is the `Console Account/Wallet` that is going to change the `commitments` data for his `SubAccount`.
