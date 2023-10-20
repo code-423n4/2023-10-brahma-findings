@@ -32,6 +32,7 @@
 | [NC-05](#NC-05) | Inconsistency in Checking Ownership in `ExecutorRegistry.sol`                                      | -         | _Non Critical_ |
 | [NC-06](#NC-06) | Immutability of Registry Addresses in AddressProvider                                              | -         | _Non Critical_ |
 | [NC-07](#NC-07) | Inability for Console Account to Remove `policyCommit` for his `SubAccounts`                       | -         | _Non Critical_ |
+| [NC-08](#NC-08) | Adding of Additional Checks in `After Execution Functions` in the Protocol                         | -         | _Non Critical_ |
 
 ---
 
@@ -405,6 +406,10 @@ Users should be made aware of the consequences of this design choice, particular
 
 # <a name="NC-07">Inability for Console Account to Remove `policyCommit` for his `SubAccounts`</a>[NC-07]
 
+## Links:
+
+- PolicyRegistry: https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/registries/PolicyRegistry.sol#L1-L70
+
 ## Description
 
 The `PolicyRegistry` manages policy commits per account. The policy can be updated
@@ -417,7 +422,9 @@ In the `PolicyRegistry` contract of the Brahma Protocol, there exists a limitati
 
 ## Contract Code
 
-```solidity
+- [updatePolicy()](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/registries/PolicyRegistry.sol#L35-L59) function:
+
+```jsx
 function updatePolicy(address account, bytes32 policyCommit) external {
     if (policyCommit == bytes32(0)) {
         revert PolicyCommitInvalid();
@@ -443,3 +450,28 @@ The impact of this issue is that `commitments` data of SubAccounts cannot be rem
 ## Recommendation
 
 Consider to allow `bytes(0) for commitments[account]` to be set only if the `msg.sender` is the `Console Account/Wallet` that is going to change the `commitments` data for his `SubAccount`.
+
+---
+
+# <a name="NC-08">Adding of Additional Checks in `After Execution Functions` in the Protocol</a>[NC-08]
+
+## Description
+
+Consider to enhance security by adding additional checks in the `After Execution Functions` in the Protocol for various scenarios. These checks will help ensure the integrity and security of the protocol.
+
+Example of validation checks that can be added in **After Execution Functions**:
+
+- If the Console Account Owners are changed (this is especially important because the _`nonce` that is created during ConsoleAccount Deployment is calculated with the `Console Account Owners Hash`_ )
+- If the Policy Signature is for ConsoleAccount or SubAccount is changed
+
+## After Execution Functions
+
+- **SafeModeratorOverridable.sol#checkAfterExecution()**: https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeModeratorOverridable.sol#L76-L79
+- **SafeModerator.sol#checkAfterExecution()**: https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeModerator.sol#L70-L73
+- **TransactionValidator.sol#validatePostTransactionOverridable()**: https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/TransactionValidator.sol#L81-L84
+- **TransactionValidator.sol#validatePostTransaction()**: https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/TransactionValidator.sol#L105-L107
+- **TransactionValidator.sol#validatePostExecutorTransaction()**: https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/TransactionValidator.sol#L132-L134
+
+######
+
+_Reference: Documentation Flow - https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/docs/Architecture.md_
