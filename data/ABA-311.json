@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ABA",
+  "risk": "2",
+  "title": "Console signatures can be inflated to an arbitrary size and still remain valid; can be used to coerce submitter into gas bombing himself a.k.a. paying a \"submission\" tax",
+  "issueId": 311,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/311"
+}
