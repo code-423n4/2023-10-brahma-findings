@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "castle_chain",
+  "risk": "3",
+  "title": "the operators of the sub account can execute any transaction(not restricted by policy ) to a 3rd party without going through the policy validation process by the trustedValidator ",
+  "issueId": 347,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/347"
+}
