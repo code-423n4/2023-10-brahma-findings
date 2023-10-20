@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": "`WalletRegistry.sol::registerSubAccount()` accepts an already active wallet, which is unintended behaviour.",
+  "issueId": 330,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/330"
+}
