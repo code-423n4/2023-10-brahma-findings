@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "merlin",
+  "risk": "3",
+  "title": "SafeModerator and SafeModeratorOverridable are not compatible with Safe 1.5",
+  "issueId": 319,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/319"
+}
