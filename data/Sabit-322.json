@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Sabit",
+  "risk": "3",
+  "title": "It is possible to deploy address(0) as owners of a Console account and subAccount",
+  "issueId": 322,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/322"
+}
