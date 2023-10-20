@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ak1",
+  "risk": "2",
+  "title": "SafeDeployer : calling the function `_genNonce` would overflow.",
+  "issueId": 445,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/445"
+}
