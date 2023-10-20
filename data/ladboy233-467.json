@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": "ConsoleFallbackHandler.sol#simulate transaction cannot simulate transaction properly",
+  "issueId": 467,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/467"
+}
