@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Avci",
+  "risk": "2",
+  "title": "the  function _validateExecutionRequest checks the valid excutor account by the address of account given in call data instead of msg.sender which is realy easily exploitble",
+  "issueId": 454,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/454"
+}
