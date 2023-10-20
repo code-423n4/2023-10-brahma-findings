@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Yanchuan",
+  "risk": "2",
+  "title": "Contract data cannot be migrated to the new address during contract upgrading.",
+  "issueId": 425,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/425"
+}
