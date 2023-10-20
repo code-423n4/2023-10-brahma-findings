@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Sabit",
+  "risk": "3",
+  "title": "A safe is not registered in the WalletRegistry contract upon calling the deployConsoleAccount function in the SafeDeploy contract",
+  "issueId": 324,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/324"
+}
