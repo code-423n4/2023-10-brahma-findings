@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Bughunter101",
+  "risk": "3",
+  "title": "`checkAfterExecution()` function has a design flaw",
+  "issueId": 348,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/348"
+}
