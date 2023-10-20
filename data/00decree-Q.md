@@ -1,4 +1,4 @@
-#### [Low] rename `_owners` to `_operators` for sake of clarity and avoid confusion.
+#### [Non-critical] rename `_owners` to `_operators` for sake of clarity and avoid confusion.
 In the doc it was mentioned that "A gnosis safe operated by the delegatee accounts called `Operators`", but `Operators` is not clearly visible/understandable in the code. 
 
 Rename the param and natspec `_owners` to `_operators` at `deploySubAccount()` and `_setupSubAccount()` for clarity.
@@ -40,7 +40,7 @@ File: SafeDeployer.sol
 github: [link](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/SafeDeployer.sol#L162C1-L205)
 
 ---
-#### [Low] Outdated documentation flowchart image in `Architecture.md`
+#### [Non-critical] Outdated documentation flowchart image in `Architecture.md`
 [github-link1](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/docs/images/console%20account%20execTransaction.png)
 `_isGuardRemovalTransaction()` is not found in codebase, replace with `_isConsoleBeingOverriden()`.
 
