@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Kaysoft",
+  "risk": "2",
+  "title": "The WalletRegistry.sol#registerWallet() function can be used to register wallet by anyone.",
+  "issueId": 458,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/458"
+}
