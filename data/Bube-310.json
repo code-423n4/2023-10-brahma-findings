@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "Bube",
+  "risk": "2",
+  "title": "Missing validation of `_owners` array",
+  "issueId": 310,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/310"
+}
