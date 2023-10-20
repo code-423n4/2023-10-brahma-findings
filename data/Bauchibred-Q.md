@@ -4,9 +4,9 @@
 
 |              | Issue                                                                                          |
 | ------------ | :--------------------------------------------------------------------------------------------- |
-| QA&#x2011;01 | Struct Definitions Should Adhere to Established Standards in `TypeHashHelper.sol`              |
+| QA&#x2011;01 | Remove Testing Variables Prior to Production Release                                           |
 | QA&#x2011;02 | Address Typographical Errors                                                                   |
-| QA&#x2011;03 | Exclude Testing Variables Prior to Production Release                                          |
+| QA&#x2011;03 | Struct Definitions Should Adhere to Established Standards in `TypeHashHelper.sol`              |
 | QA&#x2011;04 | `registerSubAccount()` shouldn't accept an already active wallet                               |
 | QA&#x2011;05 | Implementation to guarantee on-chain security for future use is flawed and requires correction |
 | QA&#x2011;06 | `_executeOnSafe()`'s Execution is Flawed Due to Missing Value in Payable Call                  |
@@ -16,7 +16,63 @@
 | QA&#x2011;10 | Unsafe Downcasting without Proper Checks                                                       |
 | QA&#x2011;11 | Add `STATICCALL` Support in `_parseOperationEnum()`                                            |
 
-## QA-01 Struct Definitions Should Adhere to Established Standards in `TypeHashHelper.sol`
+## QA-01 Remove Testing Variables Prior to Production Release
+
+### Impact
+
+**Low** Due to this oversight an unused variable in final production would be passed to final production
+
+### Proof of Concept
+
+Examine the `SafeModeratorOverridable.sol` contract:
+
+```solidity
+contract SafeModeratorOverridable is AddressProviderService, IGuard {
+    /**
+     * @dev Token interface change used to bypass foundry coverage issue
+     * Refer https://github.com/foundry-rs/foundry/issues/5729
+     */
+    uint8 public constant DIFFER_SAFE_MOD = 0;
+
+    constructor(address _addressProvider) AddressProviderService(_addressProvider) {}
+```
+
+### Recommended Mitigation Steps
+
+Omit `DIFFER_SAFE_MOD` from the final production version.
+
+## QA-02 Address Typographical Errors
+
+### Impact
+
+**Low:** Proper wording will enhance code clarity and structure.
+
+### Proof of Concept
+
+Inspect `validatePostTransactionOverridable()`:
+
+```solidity
+    /* solhint-disable no-empty-blocks */
+    /**
+     * @notice Provides on-chain guarantees on security critical expected states of a Brhma console account
+     * @dev Empty hook available for future use
+     */
+    function validatePostTransactionOverridable(bytes32, /*txHash */ bool, /*success */ address /*console */ )
+        external
+        view
+    {}
+```
+
+### Recommended Mitigation Steps
+
+Update:
+`     * @notice Provides on-chain guarantees on security critical expected states of a Brhma console account`
+to:
+`     * @notice Provides on-chain guarantees on security critical expected states of a *Brahma* console account`
+
+---
+
+## QA-03 Struct Definitions Should Adhere to Established Standards in `TypeHashHelper.sol`
 
 ### Impact
 
@@ -62,62 +118,6 @@ However, the proposed structure is as follows:
 Maintain a consistent struct pattern, preferably aligning with the EIP712 standard.
 
 ---
-
-## QA-02 Address Typographical Errors
-
-### Impact
-
-**Low:** Proper wording will enhance code clarity and structure.
-
-### Proof of Concept
-
-Inspect `validatePostTransactionOverridable()`:
-
-```solidity
-    /* solhint-disable no-empty-blocks */
-    /**
-     * @notice Provides on-chain guarantees on security critical expected states of a Brhma console account
-     * @dev Empty hook available for future use
-     */
-    function validatePostTransactionOverridable(bytes32, /*txHash */ bool, /*success */ address /*console */ )
-        external
-        view
-    {}
-```
-
-### Recommended Mitigation Steps
-
-Update:
-`     * @notice Provides on-chain guarantees on security critical expected states of a Brhma console account`
-to:
-`     * @notice Provides on-chain guarantees on security critical expected states of a *Brahma* console account`
-
----
-
-## QA-03 Exclude Testing Variables Prior to Production Release
-
-### Impact
-
-**Low** Due to this oversight an unused variable in final production would be passed to final production
-
-### Proof of Concept
-
-Examine the `SafeModeratorOverridable.sol` contract:
-
-```solidity
-contract SafeModeratorOverridable is AddressProviderService, IGuard {
-    /**
-     * @dev Token interface change used to bypass foundry coverage issue
-     * Refer https://github.com/foundry-rs/foundry/issues/5729
-     */
-    uint8 public constant DIFFER_SAFE_MOD = 0;
-
-    constructor(address _addressProvider) AddressProviderService(_addressProvider) {}
-```
-
-### Recommended Mitigation Steps
-
-Omit `DIFFER_SAFE_MOD` from the final production version.
 
 ## QA-04 `registerSubAccount()` shouldn't accept an already active wallet
 
