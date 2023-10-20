@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "neocrao",
+  "risk": "3",
+  "title": "When updating the governance, use timelocks and keep current governance in power for some time",
+  "issueId": 303,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/303"
+}
