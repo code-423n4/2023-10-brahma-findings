@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "castle_chain",
+  "risk": "2",
+  "title": "the check of the `ExpiryEpoch` that got signed by the trustedValidator allow the expiryEpoch to be equal to block.timestamp which will allow the execution of the transaction after the expiryEpoch by a range from 12 to 900 seconds",
+  "issueId": 317,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/317"
+}
