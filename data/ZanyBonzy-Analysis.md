@@ -1,12 +1,12 @@
 # **Brahma Console**
-Brahma Console v2 is a platform that helps people use decentralized finance (DeFi) more easily and safely. It does this by providing a layer of automation and risk management on top of smart contract wallets.  It provides Sub-accounts, which isolate user interactions to reduce risk. The Console is built on the principle of non-custodiality which means that users should't have to give up control of their funds to execute transactions.
+
+Brahma Console v2 is a platform that helps people use decentralized finance (DeFi) more easily and safely. It does this by providing a layer of automation and risk management on top of smart contract wallets. It provides sub-accounts, which isolate user interactions to reduce risk. The Console is built on the principle of non-custodiality, which means that users shouldn't have to give up control of their funds to execute transactions.
 
 It consists of four major account types:
-1. Console account - a gnosis safe that is owned by a number of users, and can be safeguarded by a `safeModeratorOverridable` if the owners want to;
-2. Sub-account - also a gnosis safe owned by console acct, controlled by operators, has the console account as a safe module and a `SafeModerator` as safeguard;
-3. Operator account - account acts as a delegate of a sub-account. Its rights are restricted by `safeModerator` and controlled by the console account;
-4. Executor account - an external account that makes module transactions on the sub-account via an executorplugin which needs to be enabled before use.
-
+1. Console account - a Gnosis Safe that is owned by a number of users, and can be safeguarded by a `safeModeratorOverridable` if the owners want to;
+2. Sub-account -also a Gnosis Safe owned by the console account, controlled by operators, and has the console account as a safe module and a `SafeModerator` as a safeguard;
+3. Operator account - an account that acts as a delegate of a sub-account. Its rights are restricted by `safeModerator` and controlled by the console account;
+4. Executor account - an external account that makes module transactions on the sub-account via th executorplugin which needs to be enabled before use.
 ***
 
 ## **System Overview**
@@ -15,7 +15,7 @@ It consists of four major account types:
 
 1. [AddressProvider.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/AddressProvider.sol) - is the gatekeeper of the system's authorized contracts and registries. It ensures that only the right addresses are allowed to interact with the system, and that all changes to the addresses are properly authorized and implemented;
 2. [AddressProvideService.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/AddressProviderService.sol) - is an abstract contract that provides a common interface for all core contracts to interact with the `AddressProvider` contract. It does this by providing a host of helper functions to help in these interactions;
-3. [SafeDeployer.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeDeployer.sol) - does the actual work of deploying and registering console accounts(with or without policies) and sub-accounts with policies. It sets up the required states - safeguards, fallback handler and module for these accounts;
+3. [SafeDeployer.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeDeployer.sol) - does the actual work of deploying and registering console accounts (with or without policies) and sub-accounts with policies. It sets up the required states - safeguards, fallback handler, and module for these accounts;
 4. [SafeModerator.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeModerator.sol) - is the safeguard for a sub-account. It validates transaction before and after execution by making sure that the sub-account's state remain as is and is policy compliant. It does this through the `TransactionValidator` contract; 
 5. [SafeModeratorOverridable.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeModeratorOverridable.sol) - is the safeguard for a console account that has safeguard enabled (Its not compulsory). It has the same functions as the `safeModerator` contract. On top of this, it also does a check to confirm if an owner decides override the it as a safeguard and/or the `ConsoleFallbackHandler` as the fallback handler. 
 6. [TransactionValidator.sol](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/TransactionValidator.sol) - is the contract called by the safeguards to validate state/policies before and after executions. It is also called by an executor through the `executorPlugin` for sub acoounts module executions.
@@ -88,19 +88,18 @@ It consists of four major account types:
     ExecutorPlugin <==> ExecutorPlugin (checks with ExecutorRegistry) &#8594; TransactionValidator <==> TransactionValidator &#8594; PolicyValidator &#8594; ExecutorPlugin &#8594; TransactionValidator <==> TransactionValidator
 
 ## **Codebase quality analysis**
-The codebase is of high quality, well structured and would-be large functions are carefully divided into seperate contracts. Required functions are either directly called or delegatecalled when needed. The codebase is well commented and its documentations are easy to follow. There are also unit tests for the contracts which is very commendable.
-Error handling is fine. The codebase uses a mixture of custom, require and reverts errors. In a host of cases, the errors weren't very descriptive, some without messages, some with cryptic messages like "GS102". An error also appears to be unused.
-Events were also well handled, some events didn't fully emit needed parameters, some didn't have a lot of declarations or well handled. 
-In, general NatSpec and Style guide were followed, not a 100%, but just enough to make have the contract look well organized.
-We recommend using linters and static analysis tools can help note and fix these issues before deployment.
+The codebase is of high quality, well-structured, and would-be large functions are carefully divided into separate contracts. Required functions are either directly called or delegate called when needed. The codebase is well-commented, and its documentation is easy to follow. There are also unit tests for the contracts, which is very commendable. 
+Error handling is fine. The codebase uses a mixture of custom, require, and revert errors. It's better to stick to one format, preferable custom errors as they're gas effiecient. In a host of cases, the errors weren't very descriptive, some without messages, some with cryptic messages like "GS102". An error also appears to be unused. 
+Events were also well-handled, some events didn't fully emit needed parameters, some didn't have a lot of declarations or were well-handled. In general, NatSpec and the Style guide were followed, not 100%, but just enough to make the contract look well-organized. 
+We recommend using linters and static analysis tools that can help note and fix these issues before deployment.
 
 ## **Systemic risks & Centralization risks**
-The risk of centralization seems to be limited to the brahma owned governace and guardian. Any malicious actions (intended or not) can pose a risk to the protocol and its users. 
-Some contract inherits thrid party contracts like openzeppelin, solady, gnosissafe contracts. Any issue found in these inheritancies might pose a threat to the protocol.
-One thing to also note is that although wallets and sub accounts can be added, they cannot be removed. Not sure if that is intended by the sponsor, but it might cause a potential issue in case of some problem to keep console secure.
+The risk of centralization seems to be limited to the Brahma-owned governance and guardian. Any malicious actions (intended or not) can pose a risk to the protocol and its users. Some contracts inherit third-party contracts like OpenZeppelin, Solidity, GnosisSafe contracts. Any issue found in these inheritances might pose a threat to the protocol. One thing to also note is that although wallets and sub-accounts can be added, they cannot be removed. Not sure if that is intended by the sponsor, but it might cause a potential issue in case of some problem to keep the console secure.
 
 ## **Conclusion**
-We started the audit process by thoroughly reviewing provided documentations, tests noting various important parts and asked the sponsors questions. We used static analysis tool and linters to audit the codebase, noted the bot reports and went about with the manual code inspection. We carefully inspected each section of the codebase, we tested possible attack vectors, focusing both on the sponsor's interested areas of attack (through imported wallets) and areas we deemed important. We took notes of our findings, tested them out and prepared our analysis. Overall, the console contract looks to be well written and  doesn't have a lot of serious issues. We recommend the team goes through these, make appropriate modifications where needed before deployment.
+We started the audit process by thoroughly reviewing the provided documentation, tests, noting various important parts, and asking the sponsors questions. We used static analysis tools and linters to audit the codebase, noted the bot reports, and went about with the manual code inspection. We carefully inspected each section of the codebase, tested possible attack vectors, focusing both on the sponsor's interested areas of attack (through imported wallets) and areas we deemed important. We took notes of our findings, tested them out, and prepared our analysis. Overall, the console contract looks to be well-written and doesn't have a lot of serious issues. We recommend the team goes through these, make appropriate modifications where needed before deployment.
+
+
 
 
 
