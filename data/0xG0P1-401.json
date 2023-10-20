@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xG0P1",
+  "risk": "2",
+  "title": "Missing a check in `_checkSubAccountSecurityConfig` that no new modules have been introduced to the safe ",
+  "issueId": 401,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/401"
+}
