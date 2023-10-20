@@ -8,10 +8,10 @@ the protocol uses a well-structured codebase , to enable the automation and the 
 
 
 # 2) centralization risks 
-### depending on trusted validator should be a network of nodes that validate the transactions with the policy 
+### depending on trusted validator as a single contract or EOA will cause centralization risks and should be a network of nodes that validate the transactions with the policy 
 the protocol should build a network contains multiple nodes to verify the policy with the transaction and guarantee that the verification process done correctly without any manipulation by a malicious party 
 # 3) evaluating the codebase (protocol) . 
-## adding a function to allow the mainConsole to remove a subAccount from the main console 
+## adding a function to allow the mainConsole to remove a subAccount from the wallet registry 
 consider adding this function to the wallet registry contract to allow the main console`s owners to remove the sub account in case the operators be malicious . 
 
 ## allow setting the executors by the operators since they are restricted by the policy . 
@@ -43,6 +43,8 @@ the recommendations are to allow the executor to sign the expiry epoch with the 
 ## adding a function to set the guard as safeModerator and the fallbackHandler as consoleFallbackHandler of the console when the wallet is registered and make it as an option represented by a bool value . 
 
 in the wallet registry consider adding a function to optionally set the guard of the main console as the safeModerator contract and the fallbackHandler as the ConsoleFallbackHandler in case of the safe is registered directly from the wallet registry not the safeDeployer contract . 
+
+
 
 
 
