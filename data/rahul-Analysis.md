@@ -1,9 +1,10 @@
 ## Analysis summary
 The Brahma Protocol (`Consolev2` release) was analysed for common design flaws, such as access control, arithmetic issues, front-running, denial of service, race conditions, and protocol manipulations. 
 
-Special attention was paid to custom signature packing, possibly of transaction replaying across chains, signature malleability, authorization bypass and privilege escalations. 
+Special attention was paid to custom signature packing, possibility of transaction replay across chains, signature malleability, authorization bypass, and privilege escalations. 
+
 ## Protocol Overview
-Brahma protocol aims to be a non-custodial abstraction over safe protocol. The aim of the protocol is to deploy modular, and secure components to User's safe wallet which can offer varied levels of automation of common DeFi tasks. This approach avoids the need for users to roll out their own, potentially insecure safe modules. 
+Brahma protocol aims to be a non-custodial abstraction over Safe protocol. The protocol deploy modular, and secure components to User's safe wallet which can offer varied levels of automation of common DeFi tasks. This approach avoids the need for users to roll out their own, potentially insecure Safe modules. 
 
 A background of the Safe protocol is provided in Appendix A.
 ## Architecture overview
@@ -215,6 +216,8 @@ The evaluation process involves two key phases: **Understanding** and **Review**
 In the **Understanding** phase, significant effort is dedicated to comprehending the project's background. This involves in-depth analysis of project documentation, prior releases, and similar protocols to grasp the project's core value proposition. Furthermore, this phase strives to identify critical risks, assess user journeys, and evaluate the project's security posture, including factors such as test coverage.
 
 The **Review** phase involves a systematic assessment of the project's architecture. It aims to pinpoint code duplications, highlight inconsistencies, recommend the implementation of best practices, and identify areas for potential optimization. This comprehensive approach to project evaluation ensures that not only potential security risks are addressed but also that the project's overall structure and code quality are scrutinized for enhancements.
+
+
 
 ### Time spent:
 43 hours
