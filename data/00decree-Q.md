@@ -16,6 +16,7 @@ File: SafeDeployer.sol
 ...
 104:     }
 ```
+github: [link](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/SafeDeployer.sol#L73-L103)
 
 ```
 File: SafeDeployer.sol
@@ -36,6 +37,8 @@ File: SafeDeployer.sol
 206:     }
 
 ```
+github: [link](https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/SafeDeployer.sol#L162C1-L205)
+
 ---
 #### [Low] Outdated documentation flowchart image in `Architecture.md`
 [github-link1](https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/docs/images/console%20account%20execTransaction.png)
