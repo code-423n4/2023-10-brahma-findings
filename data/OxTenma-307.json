@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "OxTenma",
+  "risk": "2",
+  "title": "All 2 transactions type in the function `deploySubAccount` in SafeDeployer contract should be delegateCall",
+  "issueId": 307,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/307"
+}
