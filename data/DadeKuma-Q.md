@@ -4,7 +4,7 @@
 |:---:|:---------------------------|
 | [L-01](#l-01-authorized-addresses-cant-be-unset) | Authorized addresses can't be unset |
 | [L-02](#l-02-registries-cannot-be-removed) | Registries cannot be removed |
-| [L-03](#l-03-policies-cant-be-unset-in-a-console-account) | Policies can't be unset in a console account |
+| [L-03](#l-03-console-accounts-are-missing-post-transaction-validations) | Console accounts are missing post transaction validations |
 
 
 ### [L-01] Authorized addresses can't be unset
@@ -49,59 +49,18 @@ Registries cannot be removed once set, and if they contain bugs, the whole syste
 https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/AddressProvider.sol#L101
 
 
-### [L-03] Policies can't be unset in a console account
+### [L-03] Console accounts are missing post transaction validations
 
 
-Console accounts allow a zero policy when they are initialized:
+Unlike SubAccounts, Console accounts lack any kind of post transaction validation after a transaction:  
 
 ```solidity
-	function deployConsoleAccount(address[] calldata _owners, uint256 _threshold, bytes32 _policyCommit, bytes32 _salt)
+	function validatePostTransactionOverridable(bytes32, /*txHash */ bool, /*success */ address /*console */ )
 	    external
-	    nonReentrant
-	    returns (address _safe)
-	{
->	    bool _policyHashValid = _policyCommit != bytes32(0);
-
-	    _safe = _createSafe(_owners, _setupConsoleAccount(_owners, _threshold, _policyHashValid), _salt);
-
->	    if (_policyHashValid) {
-	        PolicyRegistry(AddressProviderService._getRegistry(_POLICY_REGISTRY_HASH)).updatePolicy(
-	            _safe, _policyCommit
-	        ); 
-	    }
-	    emit ConsoleAccountDeployed(_safe);
-	}
+	    view
+	{}
 ```
-https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/SafeDeployer.sol#L65-L69
+https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/TransactionValidator.sol#L81-L84
 
-However, if a console account initializes without policy, and sets a policy after the initialization, the account will never be able to unset it, as the transaction will revert:
 
-```solidity
-	function updatePolicy(address account, bytes32 policyCommit) external {
->	    if (policyCommit == bytes32(0)) {
-	        revert PolicyCommitInvalid();
-	    }
 
-	    WalletRegistry walletRegistry = WalletRegistry(AddressProviderService._getRegistry(_WALLET_REGISTRY_HASH));
-
-	    bytes32 currentCommit = commitments[account];
-
-	    // solhint-disable no-empty-blocks
-	    if (
-	        currentCommit == bytes32(0)
-	            && msg.sender == AddressProviderService._getAuthorizedAddress(_SAFE_DEPLOYER_HASH)
-	    ) {
-	        // In case invoker is safe  deployer
-	    } else if (walletRegistry.isOwner(msg.sender, account)) {
-	        //In case invoker is updating on behalf of sub account
-	    } else if (msg.sender == account && walletRegistry.isWallet(account)) {  
-	        // In case invoker is a registered wallet
-	    } else {
-	        revert UnauthorizedPolicyUpdate();
-	    }
-	    // solhint-enable no-empty-blocks
-	    _updatePolicy(account, policyCommit);
-	}
-```
-
-https://github.com/code-423n4/2023-10-brahma/blob/main/contracts/src/core/registries/PolicyRegistry.sol#L36
