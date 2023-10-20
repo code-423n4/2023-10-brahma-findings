@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ggg_ttt_hhh",
+  "risk": "3",
+  "title": "Resetting a sub-account's guard manually from the Main Console can potentially lead to a permanent denial of service (DoS) for that sub-account.",
+  "issueId": 368,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/368"
+}
