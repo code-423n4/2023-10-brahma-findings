@@ -1,6 +1,7 @@
 ## [L-1] No Address zero check on the setRegistry._registry parameter
 File: https://github.com/code-423n4/2023-10-brahma/blob/dd0b41031b199a0aa214e50758943712f9f574a0/contracts/src/core/AddressProvider.sol#L97
 
+use the _notNull(_registry) function as done below.
 ```solidity
  function setRegistry(bytes32 _key, address _registry) external {
         _onlyGov();
