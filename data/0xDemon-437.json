@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xDemon",
+  "risk": "2",
+  "title": "There is no checking whether the ExecutorPlugin module has been activated or not on the sub-account, this can cause malfunctions if the user wants to execute tx via ExecutorPlugin",
+  "issueId": 437,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/437"
+}
