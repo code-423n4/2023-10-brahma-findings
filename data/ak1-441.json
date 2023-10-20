@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "ak1",
+  "risk": "3",
+  "title": "SafeDeployer.sol : Missing the correct type caste for _WALLET_REGISTRY_HASH when setup the console account could lead issue in accessing the functions from  `WalletRegistry`",
+  "issueId": 441,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/441"
+}
