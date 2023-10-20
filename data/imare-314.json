@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "imare",
+  "risk": "2",
+  "title": "`SubAccount` signers can backdoor the safe to execute any transaction",
+  "issueId": 314,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/314"
+}
