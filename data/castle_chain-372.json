@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "castle_chain",
+  "risk": "3",
+  "title": "check that the default `consoleFallbackHandler` and `SafeModerator`  have not been changed after executing every transaction by the executors and the operator will always revert and freeze all the functionality of the sub account if the owners of console account have changed this addresses ",
+  "issueId": 372,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/372"
+}
