@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0x70C9",
+  "risk": "3",
+  "title": "Executor can effectively bypass _checkSubAccountSecurityConfig by adding a new Module",
+  "issueId": 412,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/412"
+}
