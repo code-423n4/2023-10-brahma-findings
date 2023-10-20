@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xfuje",
+  "risk": "2",
+  "title": "Any arbitrary module of `SubAccount` can break 3 of the main invariants",
+  "issueId": 336,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/336"
+}
