@@ -1,0 +1,8 @@
+{
+  "contest": 295,
+  "handle": "0xmystery",
+  "risk": "2",
+  "title": "Potential for Empty validatorSignature Due to Flaw in _decompileSignatures Function and Subsequent Security Bypass",
+  "issueId": 304,
+  "issueUrl": "https://github.com/code-423n4/2023-10-brahma-findings/issues/304"
+}
